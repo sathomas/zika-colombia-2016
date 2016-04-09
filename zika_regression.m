@@ -48,7 +48,7 @@ initial_values(1) = struct;
     'thin',           1, ...
     'dic',            0, ...
     'monitorparams',  { ...
-       'alpha', 'beta', 'beta_mu', 'pvalue' ...
+       'alpha', 'beta', 'beta_mu', 'pvalue', 'si', 'R0' ...
      }, ...
     'savejagsoutput', 1, ...
     'verbosity',      2, ...
@@ -64,26 +64,13 @@ initial_values(1) = struct;
 % end
 % csvwrite('predicted.csv', [group'; x'; exp(y'); exp(predicted')]');
 
-% Calculate confidence intervals for R0
-%
-% Heffernan, J. M., Smith, R. J., & Wahl, L. M. (2005).
-%   "Perspectives on the basic reproductive ratio." Journal
-%   of the Royal Society Interface, 2(4), 281?293.
-%   http://doi.org/10.1098/rsif.2005.0042
-%
-% Zika Virus Disease mean infectious period from Lessler, et
-%   al. "Times to Key Events in the Course of Zika Infection
-%   and their Implications for Surveillance: A Systematic
-%   Review and Pooled Analysis." bioRxiv, 2 Mar 2016.
-
-L = 9.9;
-
+% Save R0 estimates in csv file
 R0 = zeros(0,4);
-for i = (group(x == 0))'
-    row(1) = i;
-    row(2) = 1 + L * stats.ci_low.beta(i);
-    row(3) = 1 + L * stats.mean.beta(i);
-    row(4) = 1 + L * stats.ci_high.beta(i);
+for j = (group(x == 0))'
+    row(1) = j;
+    row(2) = stats.ci_low.R0(j);
+    row(3) = stats.mean.R0(j);
+    row(4) = stats.ci_high.R0(j);
     R0 = [R0; row];
 end
 % csvwrite('R0.csv', R0);

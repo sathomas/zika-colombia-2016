@@ -103,7 +103,40 @@ model {
     # likely to be greater than the the other. The
     # resulting p-value should, therefore, be close to
     # 0.5.
-    test <- step(sum(sq.new[]) - sum(sq.res[]))
+    test   <- step(sum(sq.new[]) - sum(sq.res[]))
     pvalue <- mean(test)
 
+    # Additional Processing
+    # ---------------------
+    # Although not part of the regression itself, the
+    # model can be used to estimate R0 from the
+    # regression parameters. The following code relies
+    # on the approach documented in
+    #
+    #   Heffernan, J M, Smith, R J, & Wahl, L M (2005).
+    #     "Perspectives on the basic reproductive ratio."
+    #     Journal of the Royal Society Interface, 2(4),
+    #     281-293. http://doi.org/10.1098/rsif.2005.0042
+    #
+    # For the serial interval time, use data reported in
+    #
+    #   Majumder M S, Cohn E, Fish D & Brownstein J S.
+    #     Estimating a feasible serial interval range for
+    #     Zika fever [Submitted]. Bull World Health Organ,
+    #     E-pub: 9 Feb 2016.
+    #     http://dx.doi.org/10.2471/BLT.16.171009
+    #
+    # Majumder et al report only a range for their
+    # estimates without a distribution, so the following
+    # code assumes a uniform distribution within the
+    # estimated range. (Note that Majumder et al's range
+    # is specified in days. It must be converted to weeks
+    # to correspond to the observations.)
+    #
+    # The initial growth rate (r) in the calculation is
+    # simply the estimated slope beta[j].
+    for (j in 1:max(group[])) {
+        si[j] ~ dunif(10, 23)
+        R0[j] <- 1 + beta[j]*si[j]/7
+    }
 }
