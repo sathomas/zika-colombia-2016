@@ -1,35 +1,33 @@
-name,abbr,Af,Am,Aw,BWh,BSh,BSk,BWk,Cfb,Csb,Cwb,ET
-Unknown,,0,0,0,0,0,0,0,0,0,0,0
-Amazonas,AM,1,0,0,0,0,0,0,0,0,0,0
-Antioquia,AN,1,0,0,0,0,0,0,0,0,0,0
-Arauca,AR,0,0,0,0,0,0,0,0.5,0.5,0,0
-Atlántico,AT,0,0,1,0,0,0,0,0,0,0,0
-Bolívar,BL,0.33,0.33,0.34,0,0,0,0,0,0,0,0
-Boyacá,BY,0,0,0,0,0,0,0,0.34,0.33,0,0.33
-Caldas,CL,0.5,0,0,0,0,0,0,0.5,0,0,0
-Caquetá,CQ,1,0,0,0,0,0,0,0,0,0,0
-Casanare,CS,0,0,0,0,0,0,0,0.5,0.25,0,0.5
-Cauca,CA,0.33,0.33,0.34,0,0,0,0,0,0,0,0
-Cesar,CE,0.5,0.5,0,0,0,0,0,0,0,0,0
-Chocó,CH,1,0,0,0,0,0,0,0,0,0,0
-Córdoba,CO,0.33,0.33,0.34,0,0,0,0,0,0,0,0
-Cundinamarca,CU,0,0,0,0,0,0,0,0.5,0.5,0,0
-Guainía,GN,1,0,0,0,0,0,0,0,0,0,0
-Guaviare,GV,1,0,0,0,0,0,0,0,0,0,0
-Huila,HU,0.5,0,0.5,0,0,0,0,0,0,0,0
-La guajira,LG,0,0,0.25,0.5,0.25,0,0,0,0,0,0
-Magdalena,MA,0,0.5,0.5,0,0,0,0,0,0,0,0
-Meta,ME,0.25,0.25,0,0,0,0,0,0.5,0,0,0
-Nariño,NA,0,0,0,0,0,0,0,1,0,0,0
-Norte de Santander,NS,0.67,0,0,0,0,0,0,0.33,0,0,0
-Putumayo,PU,0.5,0,0,0.25,0.25,0,0,0,0,0,0
-Quindío,QD,1,0,0,0,0,0,0,0,0,0,0
-Risaralda,RI,1,0,0,0,0,0,0,0,0,0,0
-San Andrés y Providencia,SA,0,0,1,0,0,0,0,0,0,0,0
-Santander,ST,0,0,0,0,0,0,0,1,0,0,0
-Sucre,SU,0,0.33,0.67,0,0,0,0,0,0,0,0
-Tolima,TO,0.33,0.33,0.34,0,0,0,0,0,0,0,0
-Valle del Cauca,VC,0.67,0,0.33,0,0,0,0,0,0,0,0
-Vaupés,VP,1,0,0,0,0,0,0,0,0,0,0
-Vichada,VD,0,0.5,0,0,0,0,0,0,0.5,0,0
-Bogota,BO,0,0,0,0,0,0,0,0,0,0,0
+name,abbr,Af,Am,Aw,Cfb,Csb
+Amazonas,AM,1,0,0,0,0
+Antioquia,AN,1,0,0,0,0
+Arauca,AR,0,1,0,0,0
+Atlántico,AT,0,0,1,0,0
+Bolívar,BL,0,0,1,0,0
+Boyacá,BY,0,0,0,1,0
+Caldas,CL,1,0,0,0,0
+Caquetá,CQ,1,0,0,0,0
+Casanare,CS,0,1,0,0,0
+Cauca,CA,1,0,0,0,0
+Cesar,CE,0,1,0,0,0
+Chocó,CH,1,0,0,0,0
+Córdoba,CO,0,0,1,0,0
+Cundinamarca,CU,0,0,0,1,0
+Guainía,GN,1,0,0,0,0
+Guaviare,GV,0,1,0,0,0
+Huila,HU,1,0,0,0,0
+La guajira,LG,0,0,1,0,0
+Magdalena,MA,0,0,1,0,0
+Meta,ME,0,1,0,0,0
+Nariño,NA,0,0,0,0,1
+Norte de Santander,NS,1,0,0,0,0
+Putumayo,PU,1,0,0,0,0
+Quindío,QD,1,0,0,0,0
+Risaralda,RI,1,0,0,0,0
+San Andrés y Providencia,SA,0,0,1,0,0
+Santander,ST,1,0,0,0,0
+Sucre,SU,0,0,1,0,0
+Tolima,TO,1,0,0,0,0
+Valle del Cauca,VC,1,0,0,0,0
+Vaupés,VP,1,0,0,0,0
+Vichada,VD,0,1,0,0,0

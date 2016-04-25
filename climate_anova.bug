@@ -1,0 +1,61 @@
+# This is a JAGS model for performing a one-way ANOVA
+# analysis of R0 based on climate classification. The
+# input data consists of the estimated R0 values in
+# y[] and an index into the climate classification
+# in x[].
+
+model {
+
+    # For consistency, the following indices are used
+    # throughout the model:
+    #
+    # i: the individual observations
+    # j: the group number
+
+    # Prior Probabilities
+    # -------------------
+
+    # All stochastic parameters use reference
+    # (non-informative) priors.
+
+    a0 ~ dnorm(0, 0.0001)
+    sigma ~ dunif(0.001, 1000)
+
+    # Note that no prior is needed for a[1] as
+    # the sum-to-zero constraint will force a value
+    # for a[1] based on the remaining a[] elements.
+
+    for (j in 2:max(x[])) {
+        a[j] ~ dnorm(0, 0.0001)
+    }
+
+    # The Likelihood
+    # --------------
+
+    for (i in 1:length(y)) {
+
+        # Assume the measured value is normal with mean mu
+        # and standard deviation sigma. Each observation
+        # has its own mean, and we assume a common value
+        # for the standard deviation.
+        #
+        # The mean for each measurement is calculated as the
+        # sum of a base value (a0) and the effect of the
+        # group. This latter quantity is a[j], where j is
+        # the group index. The value for j is read from the
+        # data as x[i], where i is the observation index.
+        # Note that this assumes that groups are coded as
+        # 1, 2, ....
+
+        y[i] ~ dnorm(a0 + a[x[i]], 1/(sigma^2))
+
+    }
+
+    # Constraints
+    # -----------
+
+    # Implement the sum-to-zero constraint
+
+    a[1] <- - sum(a[2:max(x[])])
+
+}
